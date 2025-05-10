@@ -1,0 +1,8 @@
+{
+  "name": "@./gatsby-contentful",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "gatsby-contentful"
+  }
+}
