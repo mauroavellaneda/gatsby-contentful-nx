@@ -4,5 +4,8 @@
   "private": true,
   "nx": {
     "name": "gatsby-contentful"
+  },
+  "devDependencies": {
+   "nx": "21.0.3"
   }
 }
