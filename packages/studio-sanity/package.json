@@ -15,7 +15,7 @@
     "sanity"
   ],
   "dependencies": {
-    "@nx/react": "20.1.4",
+    "@nx/react": "^20.8.1",
     "@sanity/vision": "^2.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
