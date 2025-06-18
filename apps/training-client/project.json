@@ -1,0 +1,9 @@
+{
+  "name": "training-client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/training-client/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project training-client --web",
+  "targets": {}
+}
