@@ -8,11 +8,13 @@ const router = Router();
 const JWT_SECRET = process.env.JWT_SECRET!;
 
 router.post('/register', async (req, res) => {
+  console.log('BODY:', req.body);
   const { email, password } = req.body as AuthRequest;
 
   const existingUser = await prisma.user.findUnique({ where: { email } });
-  if (existingUser)
+  if (existingUser) {
     return res.status(400).json({ error: 'User already exists' });
+  }
 
   const hashed = await bcrypt.hash(password, 10);
   const user = await prisma.user.create({
@@ -22,7 +24,7 @@ router.post('/register', async (req, res) => {
     },
   });
 
-  res.json({
+  return res.json({
     message: 'User created',
     user: { id: user.id, email: user.email },
   });
@@ -32,16 +34,20 @@ router.post('/login', async (req, res) => {
   const { email, password } = req.body as AuthRequest;
 
   const user = await prisma.user.findUnique({ where: { email } });
-  if (!user) return res.status(401).json({ error: 'Invalid credentials' });
+  if (!user) {
+    return res.status(401).json({ error: 'Invalid credentials' });
+  }
 
   const valid = await bcrypt.compare(password, user.password);
-  if (!valid) return res.status(401).json({ error: 'Invalid credentials' });
+  if (!valid) {
+    return res.status(401).json({ error: 'Invalid credentials' });
+  }
 
   const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, {
     expiresIn: '1h',
   });
 
-  res.json({ token });
+  return res.json({ token });
 });
 
 export default router;
