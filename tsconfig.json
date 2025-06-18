@@ -8,6 +8,12 @@
     },
     {
       "path": "./apps/api"
+    },
+    {
+      "path": "./apps/training-client-e2e"
+    },
+    {
+      "path": "./apps/training-client"
     }
   ]
 }
