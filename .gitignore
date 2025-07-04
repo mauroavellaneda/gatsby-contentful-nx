@@ -45,3 +45,5 @@ test-output
 
 /generated/prisma
 .env
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
