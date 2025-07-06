@@ -1,9 +1,6 @@
 import '../../src/global.css';
+import Dashboard from './dashboard/page';
 
 export default function Index() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      hej
-    </main>
-  );
+  return <Dashboard />;
 }
