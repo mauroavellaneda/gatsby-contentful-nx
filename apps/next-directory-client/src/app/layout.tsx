@@ -1,5 +1,6 @@
 import '../global.css';
 import { Inter } from 'next/font/google';
+import DashboardWrapper from './dashboard/dashboardWrapper';
 
 export const metadata = {
   title: 'Welcome to next-directory-client',
@@ -15,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <DashboardWrapper>{children}</DashboardWrapper>
+      </body>
     </html>
   );
 }
